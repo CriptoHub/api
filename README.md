@@ -1,5 +1,16 @@
 # api
 
+Como usar a API da CriptoHub
+1. Registre novo usuário.
+
+2. Autenticação para usuário registrado:
+curl -X POST   https://system.criptohub.com.br/gateway/public/authenticate -H "Content-Type: application/json" -d '{"username": "123qwer@mailinator.com", "password": "123qwer", "stayLoggedIn": false}' -i
+
+3. Você irá receber uma resposta com Set-Cookie: header. Coloque este conteúdo como um Cookie header com qualquer solicitação para o contexto privado:
+curl -X GET   https://system.criptohub.com.br/gateway/private/settings  -H 'Cookie: Auth-Token=31f24f0023e91508RwJqJMQs_WZmxdKt2sxO4LkCYN86VFptH58oWjmkfT4wJVnWSVVQ_KMIEaPuIdt5K_kaj8d7HZ2yvCLxUJsXTQwnrGyfTN2Y8C4ePCgeqxbcvI1fzRuj2RMyNOmVYdR7QG1n4te2eJ7AQIFaQGSGjQ..' -i (editado)
+
+4. Também tenha em mente, por favor, que se estiver usando curl para acesso à API, não se esqueça de sobrescrever:
+default -d Content-Type: application/x-www-form-urlencoded header com "Content-Type: application/json" para cada post solicitado (editado).
 
 How to use CriptoHub API
 1. Register new user.
